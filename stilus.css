@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Outfit', sans-serif;
+    text-align: center;
+    background-color: #cfcccc;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+        "h h h"
+        "n n n"
+        "m m m"
+        "f f f";
+    gap: 20px;
+
+}
+
+header{
+    grid-area: h;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #716f6f;
+
+}
+
+nav {
+    grid-area: n;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 0 0  20px 20px;
+    z-index: 100;
+    margin-bottom: 20px;
+}
+
+nav a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 8px 18px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background: white;
+    color: black;
+    transform: translateY(-3px);
+}
+
+main{
+    grid-area: m;
+}
+
+section{
+    background-color: #666;
+    padding: 15px;
+    border-radius: 8px;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.637);
+}
+
+article{
+    margin-bottom: 20px;
+    background-color: #cfcccc;
+    border-radius: 4px;
+    color: black;
+}
+article p{
+    padding: 0 15px 15px 15px;
+    text-align: center;
+    font-style: italic;
+}
+
+article img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    transition: transform 0.5s ease-out;
+}
+
+article img:hover {
+        transform: translateY(-3px) scale(1.02);
+}
+
+
+footer{
+    grid-area: f;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+
+
+
+@media (max-width: 768px) {
+    main {
+
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "h"
+            "n"
+            "m"
+            "f";
+    }
+
+    nav {
+        flex-wrap: wrap;
+        gap: 10px;
+        border-radius: 0;
+    }
+
+    nav a {
+        font-size: 0.9em;
+        padding: 6px 12px;
+    }
+}
+
+
+@media (min-width: 769px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 
+            "h h h"
+            "n n n"
+            "m m m"
+            "f f f";
+        gap: 20px;
+    }
+}
